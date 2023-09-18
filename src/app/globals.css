@@ -13,7 +13,7 @@ html,
 body {
   max-width: 1440px;
   margin: auto;
-  padding: 0 10px;
+  padding-inline: 10px;
 }
 
 a {
