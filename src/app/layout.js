@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
     <html lang="fa" dir="rtl">
         <body className='text-estedad'>
           <Layout>
-            {children}
+          <div className='min-h-screen sm:px-10 px-4'>{children}</div>
           </Layout>
         </body>
     </html>

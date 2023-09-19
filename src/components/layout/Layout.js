@@ -6,7 +6,7 @@ const Layout = ({children}) => {
     return (
         <>
             <Header />
-            <div className='h-min-screen'>{children}</div>
+            <div>{children}</div>
             <Footer />
         </>
     );

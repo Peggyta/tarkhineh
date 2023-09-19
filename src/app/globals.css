@@ -13,7 +13,7 @@ html,
 body {
   max-width: 1440px;
   margin: auto;
-  padding-inline: 10px;
+  /* padding-inline: 10px; */
 }
 
 a {
@@ -22,9 +22,19 @@ a {
   cursor: pointer;
 }
 
+a:hover {
+  color: #417F56;
+  transition: all .2s ease-in;
+}
+
 button,
 input,
 textarea {
   font-family: inherit;
 }
 
+@layer components {
+  .footer-input {
+    @apply bg-transparent lg:w-60 w-40 border rounded-md border-neutral pt-7px pb-10px pr-2 
+  }
+}

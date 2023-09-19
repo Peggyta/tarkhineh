@@ -11,37 +11,32 @@ import CartIcon from '../icons/CartIcon';
 
 const Header = () => {
     return (
-       <header className='flex items-center text-base lg:text-xl justify-between h-28'>
+       <header className='flex items-center text-base lg:text-xl justify-between sm:px-10 px-4 h-28'>
             <div className='block md:hidden'>
                 <HamburgerIcon />
             </div>
             <div className=' sm:w-max w-20'>
                 <Image src={logo} alt='logo' width={155} height={51}/>
             </div>
-            <div className='hidden md:flex lg:gap-6 gap-4 text-neutral'>
+            <div className='hidden md:flex lg:gap-6 gap-3 text-neutral'>
                 <Link href='/'>صفحه اصلی</Link>
                 <Link href='/'>منو</Link>
                 <Link href='/'>اعطای نمایندگی</Link>
                 <Link href='/'>درباره ما</Link>
                 <Link href='/'>تماس با ما</Link>
             </div>
-            <div className='flex items-center gap-4 text-primary bg-white'>
-                <Link className='bg-primary text-white md:px-3 px-2 pb-2 transition rounded-lg hover:bg-emerald-600' href='/'>
-                    عضویت
-                </Link>
-                <Link className='pb-2 md:px-3 px-2' href='/'>ورود</Link>
-            </div>
-            {/* <div className='flex gap-3'>
-                <span className='bg-secondary p-2'>
+            
+            <div className='flex gap-3'>
+                <span className='bg-secondary lg:p-2 p-1 hidden md:block'>
                     <SearchIcon />
                 </span>
-                <span className='bg-secondary p-2'>
+                <span className='bg-secondary lg:p-2 p-1'>
                     <CartIcon />
                 </span>
-                <span className='bg-secondary p-2'>
+                <span className='bg-secondary lg:p-2 p-1'>
                     <ProfileIcon />
                 </span>
-            </div> */}
+            </div> 
        </header>
     );
 };
