@@ -15,14 +15,14 @@ const Header = () => {
             <div className='block md:hidden'>
                 <HamburgerIcon />
             </div>
-            <div className=' sm:w-max w-20'>
-                <Image src={logo} alt='logo' width={155} height={51}/>
+            <div className=' sm:w-max w-28'>
+                <Image src={logo} alt='logo' width="auto" height="auto" priority={true} />
             </div>
             <div className='hidden md:flex lg:gap-6 gap-3 text-neutral'>
                 <Link href='/'>صفحه اصلی</Link>
                 <Link href='/'>منو</Link>
                 <Link href='/'>اعطای نمایندگی</Link>
-                <Link href='/'>درباره ما</Link>
+                <Link href='/about-us'>درباره ما</Link>
                 <Link href='/'>تماس با ما</Link>
             </div>
             
