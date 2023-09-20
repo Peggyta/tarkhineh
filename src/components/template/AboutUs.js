@@ -1,26 +1,23 @@
 import React from 'react';
 import Image from 'next/image';
+import AboutFeatures from '../module/aboutme/AboutFeatures';
 import restaurant from '../../../public/images/restaurant.jpg';
 import styles from '../../styles/AboutUs.module.css';
-//icons
-import chart from '../icons/chart.jpg';
-import Notebook from '../icons/Notebook';
-import Person from '../icons/Person';
-import wifi from '../icons/wifi.jpg';
+
 
 const AboutUs = () => {
     return (
         <div>
             <div className={styles.aboutUs}>
-                <h2 className='h-full text-white font-bold flex items-center text-4.5xl justify-center'>
+                <h2 className='h-full text-white font-bold flex items-center text-2xl sm:text-4.5xl justify-center'>
                     درباره ترخینه بیشتر بدانید!
                 </h2>
             </div>
-            <div className='my-10 sm:px-10 px-4'>
-                <h3 className='font-bold text-2xl text-raven pb-6'>درباره ما</h3>
-                <div className='flex h-496 gap-6'>
-                    <div className='h-full'>
-                        <p className='text-neutral text-xl text-justify inline-block h-full leading-9'>
+            <div className='py-10 sm:px-10 px-4'>
+                <h3 className='font-bold sm:text-2xl text-base text-raven pb-6'>درباره ما</h3>
+                <div className='flex lg:flex-row flex-col-reverse gap-6'>
+                    <div className=' w-full lg:w-5/6'>
+                        <p className='text-neutral sm:text-xl text-sm text-justify inline-block leading-9 '>
                         رستوران‌های زنجیره‌ای ترخینه در سال ۱۳۶۸ افتتاح گردیده‌اند
                         و در طی این سال‌ها همواره با ارائه
                         غذاهای باکیفیت و سرویس سریع و به موقع در تلاش برای جلب 
@@ -38,35 +35,12 @@ const AboutUs = () => {
                         و مراسم‌های بزرگ شما خواهند بود . به امید آن روز که همه ایرانیان سالم و سلامت باشند.
                         </p>
                     </div>
-                    <Image src={restaurant} alt='resaurant' width={600} height={496} />
+                    <div className='w-full flex justify-center'>
+                        <Image src={restaurant} alt='resaurant' width={600} height={496} objectFit="cover" />
+                    </div>
                 </div>
             </div> 
-            <div className='bg-ash flex justify-between items-center sm:px-10 px-4 text-neutral text-lg h-40'>
-                <div className='flex gap-2 flex-col items-center '>
-                    <div><Person /></div>
-                    <div>
-                        <p>پرسنلی مجرب و حرفه‌ای</p>
-                    </div>    
-                </div>
-                <div className='flex flex-col gap-3 items-center '>
-                    <div><Image src={chart} alt='icon' width={48} height={48} /></div>
-                    <div>
-                        <p>کیفیت بالای غذاها</p>
-                    </div>    
-                </div>
-                <div className='flex flex-col gap-3 items-center '>
-                    <div><Image src={wifi} alt='icon' width={48} height={48} /></div>
-                    <div>
-                        <p>محیطی دلنشین و آرام</p>
-                    </div>    
-                </div>
-                <div className='flex gap-2 flex-col items-center '>
-                    <div><Notebook /></div>
-                    <div>
-                        <p>منوی متنوع</p>
-                    </div>    
-                </div>
-            </div>
+            <AboutFeatures />
         </div>
     );
 };
