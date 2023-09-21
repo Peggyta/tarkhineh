@@ -36,7 +36,7 @@ const AboutUs = () => {
                         </p>
                     </div>
                     <div className='w-full flex justify-center'>
-                        <Image src={restaurant} alt='resaurant' width={600} height={496} objectFit="cover" />
+                        <Image src={restaurant} alt='resaurant' width={600} height={496}  />
                     </div>
                 </div>
             </div> 

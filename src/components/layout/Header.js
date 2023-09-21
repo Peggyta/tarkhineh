@@ -21,7 +21,7 @@ const Header = () => {
             <div className='hidden md:flex lg:gap-6 gap-3 text-neutral'>
                 <Link href='/'>صفحه اصلی</Link>
                 <Link href='/'>منو</Link>
-                <Link href='/'>اعطای نمایندگی</Link>
+                <Link href='/branches'>اعطای نمایندگی</Link>
                 <Link href='/about-us'>درباره ما</Link>
                 <Link href='/'>تماس با ما</Link>
             </div>
