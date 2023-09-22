@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Branches = () => {
+const BranchCard = (props) => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const Branches = () => {
     );
 };
 
-export default Branches;
+export default BranchCard;

@@ -10,5 +10,5 @@ const branchSchema = new Schema({
 
 });
 
-const Branch = models.Branch || model('Branch', branchSchema);
-export default Branch;
+const TBranch = models.TBranch || model('TBranch', branchSchema);
+export default TBranch;
