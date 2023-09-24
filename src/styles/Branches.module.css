@@ -1,0 +1,7 @@
+.branchBanner {
+    background-image: url("/images/branchimg.jpg");
+    background-size: cover;
+    height: 336px;
+    background-repeat: no-repeat;
+  }
+
