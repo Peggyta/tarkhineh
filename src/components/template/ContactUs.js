@@ -4,7 +4,6 @@ import styles from '../../styles/ContactUs.module.css';
 
 const ContactUs = ({showBranches}) => {
     
-   
     return (
         <div>
              <div className={styles.contactBanner}>
@@ -14,7 +13,9 @@ const ContactUs = ({showBranches}) => {
             </div>
          {showBranches.map((item)=> {
             return (
-                <BranchCard key={item._id} {...item} />
+                <div className='my-10 px-4 sm:px-10'>
+                    <BranchCard key={item._id} {...item} />
+                </div>      
             )
          })}
         </div>
