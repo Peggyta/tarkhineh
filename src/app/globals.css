@@ -37,5 +37,8 @@ textarea {
   .footer-input {
     @apply bg-transparent lg:w-60 w-40 border rounded-md border-neutral pt-7px pb-10px pr-2 
   }
+  .diamond-shape {
+    @apply border border-primary py-2 px-2 rotate-45 rounded-sm border-2
+  }
 }
 
