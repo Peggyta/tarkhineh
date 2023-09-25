@@ -3,7 +3,7 @@ import React from 'react';
 const BenefitOfBranching = () => {
     return (
         <div className='text-raven flex flex-col items-center border-t border-b 
-        border-bordercolor my-10 pt-8 pb-12 sm:px-10 px-4 gap-6'>
+        border-bordercolor mt-10 mb-8 pt-8 pb-12 sm:px-10 px-4 gap-6'>
             <h3 className='font-bold text-2xl'>مزیت دریافت نمایندگی</h3>
             <div className='flex md:flex-row flex-col md:gap-8 gap-5 text-xl'>
                 <div className='flex flex-col gap-5'>
