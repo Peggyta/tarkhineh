@@ -13,20 +13,23 @@ function TextInput({
     }
   
     return (
-      <div>
+      <div className='w-full'>
        {textarea ? (
         <textarea
         type='text'
         name={name}
         value={formData[name]}
-        onChange={changeHandler} />
+        placeholder={title}
+        onChange={changeHandler}
+        className='border border-bordercolor rounded-md lg:w-72 w-full text-sm py-2 pr-3' />
        ): (
         <input
         type='text'
         name={name}
         value={formData[name]}
         placeholder={title}
-        onChange={changeHandler} />
+        onChange={changeHandler}
+        className='border border-bordercolor rounded-md lg:w-72 w-full text-sm py-2 pr-3' />
        )}
       </div>
     );
