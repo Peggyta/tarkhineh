@@ -21,7 +21,7 @@ function TextInput({
         value={formData[name]}
         placeholder={title}
         onChange={changeHandler}
-        className='border border-bordercolor rounded-md lg:w-72 w-full text-sm py-2 pr-3' />
+        className='border border-bordercolor rounded-md lg:w-72 w-full text-sm pt-2 pb-4 pr-3' />
        ): (
         <input
         type='text'
