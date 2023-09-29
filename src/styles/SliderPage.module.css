@@ -1,0 +1,20 @@
+.firstSlide {
+    background-image: url("/images/slideOne.jpg");
+    background-size: cover;
+    height: 336px;
+    background-repeat: no-repeat;
+  }
+
+  .secondSlide {
+    background-image: url("/images/slideTwo.jpg");
+    background-size: cover;
+    height: 336px;
+    background-repeat: no-repeat;
+  }
+
+  .thirdSlide {
+    background-image: url("/images/slideThree.jpg");
+    background-size: cover;
+    height: 336px;
+    background-repeat: no-repeat;
+  }
