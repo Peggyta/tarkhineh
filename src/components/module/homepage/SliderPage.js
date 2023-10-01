@@ -1,16 +1,9 @@
 'use client';
 import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
 import Slider from 'react-slick';
-import slideOne from '../../../../public/images/slideOne.jpg';
-import slideTwo from '../../../../public/images/slideTwo.jpg';
-import slideThree from '../../../../public/images/slideThree.jpg';
-import rectangle from '../../../../public/images/rectangle.png';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from '@/styles/SliderPage.module.css';
-
 
 const SliderPage = () => {
     const settings = {
@@ -23,13 +16,15 @@ const SliderPage = () => {
         autoplay: true,
         appendDots: dots => (
             <div style={{
-                padding: "15px",
-                width: "100%",
+                padding: "20px",
+                width: "100%",  
               }}>
-                <div style={{backgroundColor: "#fff",
-                 width:"150px",
-                  margin:"auto",
-                  borderRadius: "10px",}}>
+                <div style={{
+                    backgroundImage: "url(/images/rectangle.png)" ,
+                    width:"150px",
+                    backgroundRepeat: "no-repeat",
+                    margin:"auto",
+                    }}>
                     <ul style={{ margin: "0px",}}> {dots} </ul>
                 </div>    
             </div>
