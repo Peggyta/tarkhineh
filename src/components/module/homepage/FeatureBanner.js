@@ -10,7 +10,7 @@ import EquipmentOne from '@/components/icons/EquipmentOne';
 
 const FeatureBanner = () => {
     return (
-        <div className='mb-16'>
+        <div className='mb-8'>
             <div className={styles.bannerOfFeatures}>
                 <div className='flex md:flex-row flex-col md:gap-4 gap-6 text-white sm:px-10 px-4 justify-between sm:py-10 py-4'>
                     <div>
