@@ -23,7 +23,7 @@ a {
 }
 
 a:hover {
-  color: #4FF356;
+  color: #5bb379;
   transition: all .2s ease-in;
 }
 
@@ -39,6 +39,12 @@ textarea {
   }
   .diamond-shape {
     @apply border border-primary py-2 px-2 rotate-45 rounded-sm border-2
+  }
+  .category-card {
+    @apply absolute -bottom-4 z-10 bg-white w-36 pb-4 pt-2 flex justify-center rounded-sm shadow-md shadow-bordercolor
+  }
+  .link-click {
+    @apply text-hovercolor border-b border-b-2 border-b-hovercolor pb-0.5
   }
 }
 

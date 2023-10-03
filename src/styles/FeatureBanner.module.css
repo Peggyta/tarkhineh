@@ -1,0 +1,17 @@
+.bannerOfFeatures {
+    background-image: url("/images/featureBanner.jpg");
+    background-size: cover;
+    height: 390px;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-color: "#545934";
+  }
+
+  @media(max-width: 769px) {
+    .bannerOfFeatures {
+     background-image: url("/images/featureSmall.jpg");
+     height:540px;
+     
+    }
+     
+ }

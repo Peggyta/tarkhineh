@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -10,6 +11,14 @@ import ProfileIcon from '../icons/ProfileIcon';
 import CartIcon from '../icons/CartIcon';
 
 const Header = () => {
+    const navLinks = [
+        {text: 'صفحه اصلی', activeColor: '#5bb379', href:'/'},
+        {text: 'منو', activeColor: '#57c57c', href:'/menu'},
+        {text: 'اعطای نمایندگی', activeColor: '#66ad7e', href:'/branches'},
+        {text:'درباره ما', activeColor:'#cea263', href:'/about-us'},
+        {text:'تماس با ما', activeColor:'#eca141', href:'/contact-us'},
+    ];
+    
     return (
        <header className='flex items-center text-base lg:text-xl justify-between sm:px-10 px-4 h-28'>
             <div className='block md:hidden'>
@@ -19,11 +28,14 @@ const Header = () => {
                 <Image src={logo} alt='logo' width="auto" height="auto" priority={true} />
             </div>
             <div className='hidden md:flex lg:gap-6 gap-3 text-neutral'>
-                <Link href='/'>صفحه اصلی</Link>
-                <Link href='/'>منو</Link>
-                <Link href='/branches'>اعطای نمایندگی</Link>
-                <Link href='/about-us'>درباره ما</Link>
-                <Link href='/contact-us'>تماس با ما</Link>
+                {navLinks.map((item, index)=>{
+                    return  <Link 
+                                key={index}
+                                href={item.href}
+                            >
+                                {item.text}
+                            </Link>
+                })}
             </div>
             
             <div className='flex gap-3'>
@@ -33,9 +45,9 @@ const Header = () => {
                 <span className='bg-secondary lg:p-2 p-1'>
                     <CartIcon />
                 </span>
-                <span className='bg-secondary lg:p-2 p-1'>
-                    <ProfileIcon />
-                </span>
+                <Link href='/signin' className='bg-secondary lg:p-2 p-1 hover:bg-grass'>
+                        <ProfileIcon />
+                </Link>
             </div> 
        </header>
     );

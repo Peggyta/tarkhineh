@@ -11,13 +11,16 @@ const ContactUs = ({showBranches}) => {
                    با ترخینه در تماس باشید.
                 </h2>
             </div>
-         {showBranches.map((item)=> {
-            return (
-                <div className='my-10 px-4 sm:px-10'>
-                    <BranchCard key={item._id} {...item} />
-                </div>      
-            )
-         })}
+            <div className='pb-10'>
+                {showBranches.map((item)=> {
+                return (
+                    <div className='my-10 px-4 sm:px-10'>
+                        <BranchCard key={item._id} {...item} />
+                    </div>      
+                )
+                })}
+            </div>
+        
         </div>
     );
 };

@@ -12,15 +12,12 @@ const BranchCard = (props) => {
                     <div className='h-full overflow-hidden rounded-r-md md:w-1/2 w-full'>
                         <Image src={`/images/${slug}.jpg`} alt='branches' width={600} height={280} />
                     </div>
-                    <div className='text-neutral flex flex-col xl:gap-2 xl:text-lg sm:text-sm text-xs px-4 md:px-0 md:pl-2'>
+                    <div className='text-neutral flex flex-col xl:gap-2 xl:text-lg sm:text-sm text-xs px-4 md:px-0 md:pl-2 pb-10 md:pb-0'>
                         <h3 className='text-center md:pb-4 font-semibold lg:text-xl sm:text-lg text-raven text-sm'>{title}</h3>
                         <p>آدرس: {address}</p>
                         <p>شماره تماس: {reversePhoneNum(phone)}</p>
                         <p>ساعت کاری: {work}</p>
-                        <div className='lg:flex gap-6 justify-center xl:pb-0 md:pt-1 lg:pt-3 pb-4 pt-2 w-full mt-2 md:hidden flex'>
-                            <Link className='border sm:px-10 px-6 border-primary text-primary md:px-3 pt-0.5 pb-2 rounded-md hover:bg-green-200' href='/'>صفحه شعبه</Link>
-                            <Link className='bg-primary sm:px-10 px-6 text-white md:px-3 pt-0.5 pb-2 rounded-md hover:bg-green-200' href='/'>دیدن در نقشه</Link>
-                        </div>
+                        
                     </div>
                 </div> 
     );
