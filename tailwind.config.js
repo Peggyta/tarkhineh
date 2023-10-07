@@ -10,6 +10,7 @@ module.exports = {
       colors: {
         'primary': '#417F56',
         'secondary': '#E5F2E9',
+        'hovercolor': '#5bb379',
         'neutral': '#717171',
         'raven': '#353535',
         'ash': '#ededed',
@@ -24,6 +25,7 @@ module.exports = {
       spacing: {
         '7px': '7px',
         '10px': '10px',
+        '20': '70px',
       },
       width: {
         '470':'470px',
@@ -35,7 +37,7 @@ module.exports = {
       },
       fontSize: {
         '4.5xl': '40px',
-      }
+      },
     },
   },
   plugins: [],

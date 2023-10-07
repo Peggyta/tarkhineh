@@ -7,6 +7,8 @@ import { reversePhoneNum } from '@/helper/functions';
 const BranchCard = (props) => {
     const {title, phone, address, work, slug} = props;
     return (
+        <>
+        <Link href={`/contact-us/${slug}`}>
                 <div className='flex md:flex-row flex-col items-center justify-start lg:gap-20 gap-6 border border-gray-300 
                 cursor-pointer hover:scale-105 hover:shadow-lg hover:transition sm:w-600 h-full w-full mx-auto md:w-full rounded-md'>
                     <div className='h-full overflow-hidden rounded-r-md md:w-1/2 w-full'>
@@ -16,10 +18,11 @@ const BranchCard = (props) => {
                         <h3 className='text-center md:pb-4 font-semibold lg:text-xl sm:text-lg text-raven text-sm'>{title}</h3>
                         <p>آدرس: {address}</p>
                         <p>شماره تماس: {reversePhoneNum(phone)}</p>
-                        <p>ساعت کاری: {work}</p>
-                        
+                        <p>ساعت کاری: {work}</p>   
                     </div>
                 </div> 
+            </Link>
+            </>
     );
 };
 

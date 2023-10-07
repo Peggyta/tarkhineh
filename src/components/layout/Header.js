@@ -2,6 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+
 //logo
 import logo from '../../../public/images/logo.png';
 //icons
@@ -12,11 +13,11 @@ import CartIcon from '../icons/CartIcon';
 
 const Header = () => {
     const navLinks = [
-        {text: 'صفحه اصلی', activeColor: '#5bb379', href:'/'},
-        {text: 'منو', activeColor: '#57c57c', href:'/menu'},
-        {text: 'اعطای نمایندگی', activeColor: '#66ad7e', href:'/branches'},
-        {text:'درباره ما', activeColor:'#cea263', href:'/about-us'},
-        {text:'تماس با ما', activeColor:'#eca141', href:'/contact-us'},
+        {text: 'صفحه اصلی', href:'/'},
+        {text: 'منو', href:'/menu'},
+        {text: 'اعطای نمایندگی', href:'/branches'},
+        {text:'درباره ما', href:'/about-us'},
+        {text:'تماس با ما', href:'/contact-us'},
     ];
     
     return (
@@ -46,7 +47,7 @@ const Header = () => {
                     <CartIcon />
                 </span>
                 <Link href='/signin' className='bg-secondary lg:p-2 p-1 hover:bg-grass'>
-                        <ProfileIcon />
+                    <ProfileIcon />
                 </Link>
             </div> 
        </header>
