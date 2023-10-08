@@ -46,5 +46,14 @@ textarea {
   .link-click {
     @apply text-hovercolor border-b border-b-2 border-b-hovercolor pb-0.5
   }
+  .forms-input {
+    @apply border border-2 border-hovercolor rounded-md p-2 focus:ring-primary focus:invalid:border-pink-500 focus:invalid:ring-pink-500
+  }
+  .form-items {
+    @apply flex flex-col justify-center gap-2
+  }
+  .form-button {
+    @apply bg-primary pt-2 pb-3 text-white rounded-md font-bold hover:bg-hovercolor transition mt-2
+  }
 }
 

@@ -18,6 +18,7 @@ module.exports = {
         'soft': '#fff2f2',
         'grass': '#1d291f',
         'bordercolor': '#cbcbcb',
+        'hovercolor': '#5bb379',
       },
       maxWidth: {
         '8xl': '1440px',

@@ -10,4 +10,4 @@ async function verifyPassword(password, hashedPassword) {
     return isValid;
 }
 
-export{hashPassword, verifyPassword};
+export {hashPassword, verifyPassword};
