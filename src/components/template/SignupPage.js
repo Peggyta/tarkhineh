@@ -1,13 +1,37 @@
 'use client';
 import React, {useState} from 'react';
 import Link from 'next/link';
-import Loader from '../icons/Loader';
+import { useRouter } from 'next/navigation';
+import { Toaster, toast } from 'react-hot-toast';
+import Loader from '@/components/module/Loader';
 
 const SignupPage = () => {
+  const router = useRouter();
   const[loading, setLoading]= useState(false);
   const[email, setEmail]= useState('');
   const[password, setPassword]= useState('');
   const[rePassword, setRePassword]= useState('');
+
+  const signupHandler = async(e) => {
+    e.preventDefault();
+    if(password !== rePassword) {
+      toast.error('پسورد و تکرار آن برابر نیست');
+      return;
+    }
+    setLoading(true);
+    const res = await fetch('/api/auth/signup', {
+      method: "POST",
+      body: JSON.stringify({email, password}),
+      headers: { 'Content-Type': 'application/json' },
+    });
+    const data = await res.json();
+    setLoading(false);
+    if(res.status===201) {
+      router.push('/signin');
+    } else {
+      toast.error(data.error);
+    }
+  };
 
     return (
       <div className='flex flex-col items-center justify-center pt-12 text-primary text-sm'>
@@ -41,13 +65,14 @@ const SignupPage = () => {
             />
           </div> 
           {loading ? <Loader /> : 
-          <button className='form-button'>ثبت‌نام</button>}
+          <button className='form-button' onClick={signupHandler}>ثبت‌نام</button>}
         </form>
         <p className='pt-2 text-neutral'>
           حساب کاربری دارید؟
           <Link className='font-bold text-primary border-b border-b-2 border-primary pb-0.5 
           pr-0.5 hover:border-hovercolor' href="/signin">ورود</Link>
         </p>
+        <Toaster />
     </div>
     );
 };

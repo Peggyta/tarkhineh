@@ -1,12 +1,32 @@
 'use client';
 import React, {useState} from 'react';
 import Link from 'next/link';
-import Loader from '../icons/Loader';
+import { useRouter } from 'next/navigation';
+import { signIn } from 'next-auth/react';
+import Loader from '../module/Loader';
+import { Toaster, toast } from 'react-hot-toast';
 
 const SigninPage = () => {
+  const router = useRouter();
   const[loading, setLoading]= useState(false);
   const[email, setEmail]= useState('');
   const[password, setPassword]= useState('');
+
+  const signinHandler= async(e) => {
+    e.preventDefault();
+    setLoading(true);
+    const res = await signIn('credentials', {
+      email,
+      password,
+      redirect: false,
+    });
+    setLoading(false);
+    if(res.error) {
+      toast.error(res.error)
+    } else {
+      router.push('/');
+    }
+  };
 
     return (
       <div className='flex flex-col items-center justify-center pt-12 text-primary text-sm'>
@@ -30,13 +50,14 @@ const SigninPage = () => {
               className='forms-input'
             />
           </div>
-          {loading ? <Loader /> : <button className='form-button'>ورود</button>}
+          {loading ? <Loader /> : <button className='form-button' onClick={signinHandler}>ورود</button>}
         </form>
         <p className='pt-2 text-neutral'>
           حساب کاربری ندارید؟
           <Link className='font-bold text-primary border-b border-b-2 border-primary pb-0.5 
           pr-0.5 hover:border-hovercolor' href="/signup">ثبت نام</Link>
         </p>
+        <Toaster />
     </div>
     );
 };
