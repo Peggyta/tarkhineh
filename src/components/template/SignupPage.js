@@ -72,7 +72,7 @@ const SignupPage = () => {
           <Link className='font-bold text-primary border-b border-b-2 border-primary pb-0.5 
           pr-0.5 hover:border-hovercolor' href="/signin">ورود</Link>
         </p>
-        <Toaster />
+        <Toaster position="top-center" />
     </div>
     );
 };
