@@ -29,7 +29,9 @@ const Header = () => {
                 <HamburgerIcon />
             </div>
             <div className=' sm:w-max w-28'>
-                <Image src={logo} alt='logo' width="auto" height="auto" priority={true} />
+                <Link href='/'>
+                    <Image src={logo} alt='logo' width="auto" height="auto" priority={true} />
+                </Link> 
             </div>
             <div className='hidden md:flex lg:gap-6 gap-3 text-neutral'>
                 {navLinks.map((item, index)=>{
