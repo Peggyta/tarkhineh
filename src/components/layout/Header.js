@@ -2,6 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useSession } from 'next-auth/react';
 
 //logo
 import logo from '../../../public/images/logo.png';
@@ -10,8 +11,10 @@ import HamburgerIcon from '../icons/HamburgerIcon';
 import SearchIcon from '../icons/SearchIcon';
 import ProfileIcon from '../icons/ProfileIcon';
 import CartIcon from '../icons/CartIcon';
+import LoginIcon from '../icons/LoginIcon';
 
 const Header = () => {
+    const {data} = useSession();
     const navLinks = [
         {text: 'صفحه اصلی', href:'/'},
         {text: 'منو', href:'/menu'},
@@ -38,7 +41,6 @@ const Header = () => {
                             </Link>
                 })}
             </div>
-            
             <div className='flex gap-3'>
                 <span className='bg-secondary lg:p-2 p-1 hidden md:block'>
                     <SearchIcon />
@@ -46,9 +48,17 @@ const Header = () => {
                 <span className='bg-secondary lg:p-2 p-1'>
                     <CartIcon />
                 </span>
-                <Link href='/signin' className='bg-secondary lg:p-2 p-1 hover:bg-grass'>
-                    <ProfileIcon />
-                </Link>
+                {data ? (
+                    <div className='bg-secondary lg:p-2  p-1'>
+                        <Link href='/dashboard'>
+                            <ProfileIcon />
+                        </Link>
+                    </div>): (
+                    <div className='bg-secondary lg:p-2  p-1'>
+                        <Link href='/signin'>
+                            <LoginIcon />
+                        </Link>
+                    </div>)}
             </div> 
        </header>
     );

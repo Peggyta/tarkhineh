@@ -37,10 +37,10 @@ const Footer = () => {
                     </div>
                     <div className='flex flex-col gap-4'>
                         <h3 className='font-bold mb-2 md:text-xl'>شعبه‌های ترخینه</h3>
-                        <Link href='/branches'>شعبه اکباتان</Link>
-                        <Link href='/branches'>شعبه چالوس</Link>
-                        <Link href='/branches'>شعبه اقدسیه</Link>
-                        <Link href='/branches'>شعبه ونک</Link>
+                        <Link href='/contact-us'>شعبه اکباتان</Link>
+                        <Link href='/contact-us'>شعبه چالوس</Link>
+                        <Link href='/contact-us'>شعبه اقدسیه</Link>
+                        <Link href='/contact-us'>شعبه ونک</Link>
                     </div>
                     <div className='md:flex flex-col gap-1 hidden '>
                         <h3 className='font-bold mb-2 text-xl'>پیام به ترخینه</h3>
