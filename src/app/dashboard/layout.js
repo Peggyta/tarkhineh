@@ -3,6 +3,7 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '../api/auth/[...nextauth]/route';
 import DashboardSidebar from '@/components/layout/DashboardSidebar';
 import { redirect } from 'next/navigation';
+import connectDB from '@/utils/connectDB';
 import User from '@/models/User';
 
 export const metadata = {
@@ -12,6 +13,7 @@ export const metadata = {
 async function DashboardLayout ({children}) {
     const session = await getServerSession(authOptions);
     if(!session) redirect('/signin');
+    await connectDB();
     const user = await User.findOne({email: session.user.email});
     if(!user) return <h3 className='text-xl text-raven font-bold'>مشکلی پیش آمده است</h3>
     return (
