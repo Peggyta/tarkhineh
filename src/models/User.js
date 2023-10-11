@@ -1,6 +1,20 @@
 import { Schema, model, models } from "mongoose";
 
 const userSchema = new Schema ({
+    name: {
+        type: String,
+        minLength: 3,
+    },
+    lastName: {
+        type: String,
+        minLength: 1,
+    },
+    phone: {
+        type: String,
+    },
+    birthday: {
+        type: Date,
+    },
     email: {
         type: String,
         required: true,
@@ -17,6 +31,10 @@ const userSchema = new Schema ({
         type: Date,
         default: () => Date.now(),
         immutable: true,
+    },
+    updatedAt: {
+        type: Date,
+        default: () => Date.now(),
     }
 });
 
