@@ -14,8 +14,9 @@ import Waiting from "../icons/Waiting";
 async function DashboardSidebar({children, role}) {
     const session = await getServerSession(authOptions);
     return (
-        <div className="border border-bordercolor rounded-md pt-4 pb-5 px-4 w-64">
-            <div className="flex justify-between items-end">
+        <div className="flex justify-between h-screen w-full">
+        <div className="md:border md:border-bordercolor md:rounded-md md:pt-4 pb-5 px-4 md:w-64 w-full md:h-80">
+            <div className="flex md:justify-between md:gap-0 gap-4 md:items-end items-center">
                 <div className="border border-bordercolor rounded-full w-fit">
                     <Image src={userpic} alt="profile-pic" width={88} height={88} />
                 </div>
@@ -24,7 +25,7 @@ async function DashboardSidebar({children, role}) {
                     <p className="text-neutral text-sm">{session?.user.email}</p>
                 </div>
             </div>
-            <div className="border-b border-bordercolor py-2"></div>
+            <div className="border-b md:border-bordercolor py-2 border-raven"></div>
             <div className="flex flex-col text-raven gap-3 pt-2">
                 <Link className="flex items-center gap-1" href='/dashboard'><PanelUser />پروفایل</Link>
                 <Link className="flex items-center gap-1" href='/dashboard/my-orders'><WalletIcon/>پیگیری سفارشات</Link>
@@ -34,7 +35,8 @@ async function DashboardSidebar({children, role}) {
                 <Waiting />در انتظار تایید</Link> : null}
                 <LogoutButton />
             </div>
-            <div>{children}</div>
+        </div>
+        <div className="w-3/4">{children}</div>
         </div>
     )
 }
