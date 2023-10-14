@@ -78,3 +78,62 @@ export async function POST(req) {
     }
 };
 
+export async function PATCH(req) {
+    try {
+        await connectDB();
+        const {
+            _id,
+            firstName,
+            lastName,
+            birthday,
+            phone
+        } = await req.json();
+        const session = await getServerSession(req);
+        if(!session) {
+            return NextResponse.json(
+                {error: "لطفاً ابتدا وارد حساب کاربری خود شوید"},
+                {status: 401}
+            );
+        }
+        const user = await User.findOne({email: session.user.email});
+        if(!user) {
+            return NextResponse.json(
+                {error: "حساب کاربری یافت نشد"},
+                {status: 404}
+            );
+        }
+        if(
+            !_id ||
+            !firstName ||
+            !lastName ||
+            !phone ||
+            !birthday
+        ) {
+            return NextResponse.json(
+                {error: "لطفاً اطلاعات معتبر وارد نمایید"},
+                {status: 400}
+            );
+        }
+        const profile = await Profile.findOne({_id});
+        if(!user._id.equals(profile.userId)) {
+            return NextResponse.json(
+                {error: "دسترسی شما به این بخش محدود شده است"},
+                {status: 403}
+            );
+        }
+        profile.firstName = firstName;
+        profile.lastName = lastName;
+        profile.birthday = birthday;
+        profile.phone = phone;
+        profile.save();
+        return NextResponse.json(
+            {message: "اطلاعات با موفقیت ویرایش شد"},
+            {status: 200}
+        );
+    } catch(err) {
+        return NextResponse.json(
+            {error: "مشکلی در سرور رخ داده است"},
+            {status: 500}
+        )
+    }
+}
