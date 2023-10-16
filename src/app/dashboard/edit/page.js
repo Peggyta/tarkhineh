@@ -2,7 +2,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import User from "@/models/User";
 import connectDB from "@/utils/connectDB";
-import DashboardPage from "@/components/template/DashboardPage";
+import DashboardEditPage from "@/components/template/DashboardEditPage";
 
 async function MyProfile() {
     await connectDB();
@@ -16,6 +16,6 @@ async function MyProfile() {
             as: 'profiles',
         }},
     ]);
-    return <DashboardPage data={user.profiles} />
+    return <DashboardEditPage data={user.profiles} />
 }
 export default MyProfile;

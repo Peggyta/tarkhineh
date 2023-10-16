@@ -19,7 +19,7 @@ async function DashboardLayout ({children}) {
     return (
         <div className='sm:px-10 px-4 pt-6'>
             <DashboardSidebar role={user.role} email={user.email}>
-                {children}
+               {children}
             </DashboardSidebar>     
         </div>
     );
