@@ -4,12 +4,11 @@ import { useRouter } from 'next/navigation';
 import { toast, Toaster } from 'react-hot-toast';
 import DashboardInput from '../module/dashboardItems/DashboardInput';
 import CustomDatePicker from '../module/dashboardItems/CustomDatePicker';
-import ProfileCard from '../module/dashboardItems/ProfileCard';
 import Loader from '../module/Loader';
 import EditIcon from '../icons/EditIcon';
 
 const DashboardEditPage = ({data}) => {
-    console.log(data);
+
     const router = useRouter();
     const[loading, setLoading] = useState(false);
     const[dashboardData, setDashboardData] = useState({
@@ -52,6 +51,10 @@ const DashboardEditPage = ({data}) => {
             toast.success(data.message);
             router.refresh();
         }
+    };
+
+    const cancelHandler = () => {
+        router.push('/dashboard')
     };
 
     useEffect(()=> {
@@ -102,13 +105,19 @@ const DashboardEditPage = ({data}) => {
                 setDashboardData={setDashboardData}
                  />
             </div>
-            {loading ? <Loader /> : data ? (<div className='flex justify-center'>
+            {loading ? <Loader /> : data ? (<div className='flex justify-center gap-5'>
                     <button 
                         onClick={editHandler}
                         className='border border-primary rounded-md px-8 hover:text-hovercolor hover:border-hovercolor transition
                         text-primary pt-1 pb-2 flex items-center gap-1'>
-                        <EditIcon />ویرایش اطلاعات شخصی 
-                    </button>    
+                        <EditIcon />ذخیره
+                    </button>  
+                    <button 
+                        onClick={cancelHandler}
+                        className='border border-primary rounded-md px-8 hover:text-hovercolor hover:border-hovercolor transition
+                        text-primary pt-1 pb-2 flex items-center gap-1'>
+                        <EditIcon />لغو
+                    </button>     
             </div>) : (<div className='flex justify-center'>
                 <button 
                     onClick={submitHandler}
