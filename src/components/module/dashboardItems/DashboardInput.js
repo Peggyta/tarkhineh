@@ -17,7 +17,7 @@ const DashboardInput = ({
             placeholder={title}
             value={dashboardData[name]}
             onChange={changeHandler}
-            className='border border-bordercolor rounded-md lg:w-72 w-full text-sm py-2 pr-3' />
+            className='active-input'/>
         </div>
     );
 };
