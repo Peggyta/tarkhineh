@@ -24,8 +24,8 @@ const FeatureBanner = () => {
                             </p>
                         </div>
                         <div className='flex justify-end pt-4 lg:pt-0'>
-                            <Link href='/about-us' className='flex items-center justify-center pt-1 pb-2 border border-white rounded-sm w-36 md:text-base text-sm'>
-                                اطلاعات بیشتر<span className='pt-1'><LeftArrow /></span>
+                            <Link href='/about-us' className='flex items-center justify-center pt-1 pb-2 border border-white rounded-sm w-36 hover:border-primary md:text-base text-sm'>
+                                اطلاعات بیشتر<span className='pt-1 hover:stroke-primary'><LeftArrow /></span>
                             </Link>
                         </div>
                         
