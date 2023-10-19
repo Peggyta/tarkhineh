@@ -16,6 +16,6 @@ async function MyProfile() {
             as: 'profiles',
         }},
     ]);
-    return <DashboardPage data={user.profiles} />
+    return <DashboardPage data={user.profiles} email={user.email} id={user._id} />
 }
 export default MyProfile;

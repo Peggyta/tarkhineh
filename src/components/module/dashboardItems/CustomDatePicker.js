@@ -3,6 +3,7 @@ import React from 'react';
 import DatePicker from "react-multi-date-picker";
 import persian from "react-date-object/calendars/persian";
 import persian_fa from "react-date-object/locales/gregorian_fa";
+import '../../../styles/DatePickerStyle.css';
 
 const CustomDatePicker = ({dashboardData, setDashboardData}) => {
     const changeHandler = (e) => {
@@ -17,9 +18,10 @@ const CustomDatePicker = ({dashboardData, setDashboardData}) => {
             calendar={persian}
             locale={persian_fa}
             calendarPosition='bottom-right'
+            containerClassName="custom-container"
             style={{
-                width: "290px",
-                height: "38px",
+                
+                height: "36px",
                 borderRadius: "6px",
                 fontSize: "14px",
                 padding: "3px 10px",

@@ -30,7 +30,7 @@ export async function POST(req) {
             birthday,
             firstName,
             lastName,
-            phone
+            phone,
         } = await req.json();
         const session = await getServerSession(req);
         if(!session) {
@@ -86,8 +86,10 @@ export async function PATCH(req) {
             firstName,
             lastName,
             birthday,
-            phone
+            phone,
+            userName
         } = await req.json();
+        // console.log({_id, firstName, lastName, phone});
         const session = await getServerSession(req);
         if(!session) {
             return NextResponse.json(
@@ -107,15 +109,17 @@ export async function PATCH(req) {
             !firstName ||
             !lastName ||
             !phone ||
-            !birthday
+            !birthday ||
+            !userName  
         ) {
             return NextResponse.json(
                 {error: "لطفاً اطلاعات معتبر وارد نمایید"},
                 {status: 400}
             );
         }
-        const profile = await Profile.findOne({_id});
-        if(!user._id.equals(profile.userId)) {
+        const profile = await Profile.findOne({userId:_id});
+        // console.log(profile, 'profile');
+        if(profile && !user._id.equals(profile.userId)) {
             return NextResponse.json(
                 {error: "دسترسی شما به این بخش محدود شده است"},
                 {status: 403}
@@ -125,12 +129,14 @@ export async function PATCH(req) {
         profile.lastName = lastName;
         profile.birthday = birthday;
         profile.phone = phone;
+        profile.userName = userName;
         profile.save();
         return NextResponse.json(
             {message: "اطلاعات با موفقیت ویرایش شد"},
             {status: 200}
         );
     } catch(err) {
+        console.log(err);
         return NextResponse.json(
             {error: "مشکلی در سرور رخ داده است"},
             {status: 500}

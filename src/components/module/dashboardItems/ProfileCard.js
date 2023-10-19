@@ -1,7 +1,8 @@
 import React from 'react';
 
-const ProfileCard = ({data}) => {
-    const{userName, firstName, lastName, email, phone, birthday} = data;
+const ProfileCard = ({data, email}) => {
+    const{userName, firstName, lastName, phone, birthday} = data;
+
     return (
         <div className='grid grid-cols-2 place-items-center gap-8 pb-10 text-raven '>
             <p>نام: <span className='text-primary font-bold'>{firstName}</span></p>

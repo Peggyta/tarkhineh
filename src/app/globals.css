@@ -55,5 +55,15 @@ textarea {
   .form-button {
     @apply bg-primary pt-2 pb-3 text-white rounded-md font-bold hover:bg-hovercolor transition mt-2
   }
+  .active-input {
+    @apply border border-bordercolor rounded-md lg:w-72 w-full text-sm py-2 pr-3
+  }
+  .deactive-input {
+    @apply border border-bordercolor rounded-md lg:w-72 w-full text-sm py-2 pr-3 bg-ash text-neutral
+  }
+  .dashboard-button {
+    @apply border border-primary rounded-md px-8 hover:text-hovercolor hover:border-hovercolor transition
+    pt-1 pb-2 flex items-center gap-1 w-32 justify-center
+  }
 }
 

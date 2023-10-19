@@ -1,0 +1,14 @@
+.custom-container {
+    width: 290px;
+  }
+  
+  .custom-container .rmdp-input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  @media (max-width: 1018px) {
+    .custom-container {
+        width: 100%;
+      }
+  }

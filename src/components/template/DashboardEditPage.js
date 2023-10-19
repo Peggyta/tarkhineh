@@ -7,18 +7,17 @@ import CustomDatePicker from '../module/dashboardItems/CustomDatePicker';
 import Loader from '../module/Loader';
 import EditIcon from '../icons/EditIcon';
 
-const DashboardEditPage = ({data}) => {
-
+const DashboardEditPage = ({data, email}) => {
     const router = useRouter();
     const[loading, setLoading] = useState(false);
     const[dashboardData, setDashboardData] = useState({
         title:'',
-        firstName:'',
-        lastName: '',
-        birthday: new Date(),
-        email: '',
-        phone: '',
-        userName: '',
+        firstName: data.firstName || '',
+        lastName: data.lastName || '',
+        birthday: data.birthday || new Date(),
+        email: email,
+        phone: data.phone || '',
+        userName: data.userName || '',
     });
     const submitHandler= async() => {
         setLoading(true);
@@ -62,7 +61,7 @@ const DashboardEditPage = ({data}) => {
     },[]);
     
     return (
-        <div className='border border-bordercolor rounded-md px-4 h-3/4'>
+        <div className='border border-bordercolor rounded-md px-4 h-3/4 hidden md:block lg:mr-4 md:mr-6'>
             <h3 className='text-raven font-bold text-2xl pt-4'>پروفایل من</h3>
             <div className='border-b border-bordercolor mt-3 mb-10 '></div>
             <div className='grid grid-cols-2 place-items-center gap-5 pb-10'>
@@ -108,15 +107,13 @@ const DashboardEditPage = ({data}) => {
             {loading ? <Loader /> : data ? (<div className='flex justify-center gap-5'>
                     <button 
                         onClick={editHandler}
-                        className='border border-primary rounded-md px-8 hover:text-hovercolor hover:border-hovercolor transition
-                        text-primary pt-1 pb-2 flex items-center gap-1'>
-                        <EditIcon />ذخیره
+                        className='dashboard-button text-white bg-primary hover:text-white hover:bg-hovercolor'>
+                        ذخیره
                     </button>  
                     <button 
                         onClick={cancelHandler}
-                        className='border border-primary rounded-md px-8 hover:text-hovercolor hover:border-hovercolor transition
-                        text-primary pt-1 pb-2 flex items-center gap-1'>
-                        <EditIcon />لغو
+                        className='dashboard-button text-primary '>
+                        لغو
                     </button>     
             </div>) : (<div className='flex justify-center'>
                 <button 
@@ -126,7 +123,6 @@ const DashboardEditPage = ({data}) => {
                    <EditIcon />ثبت اطلاعات شخصی 
                 </button>
             </div>)}
-            
             <Toaster />
         </div>
     );

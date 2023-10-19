@@ -7,6 +7,7 @@ module.exports = {
   ],
   theme: {
     extend: {
+      opacity: ['disabled'],
       colors: {
         'primary': '#417F56',
         'secondary': '#E5F2E9',
@@ -19,6 +20,7 @@ module.exports = {
         'grass': '#1d291f',
         'bordercolor': '#cbcbcb',
         'hovercolor': '#5bb379',
+        'tomato': '#c30000',
       },
       maxWidth: {
         '8xl': '1440px',
