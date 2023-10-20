@@ -14,8 +14,8 @@ const ContactUs = ({showBranches}) => {
             <div className='pb-10'>
                 {showBranches.map((item)=> {
                 return (
-                    <div className='my-10 px-4 sm:px-10'>
-                        <BranchCard key={item._id} {...item} />
+                    <div className='my-10 px-4 sm:px-10' key={item._id}>
+                        <BranchCard {...item} />
                     </div>      
                 )
                 })}
