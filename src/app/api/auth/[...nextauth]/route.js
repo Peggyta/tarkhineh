@@ -10,6 +10,7 @@ export const authOptions = {
         CredentialsProvider({
             async authorize(credentials) {
                 const {email, password} = credentials;
+                secret:process.env.NEXTAUTH_SECRET;
                 try {
                     await connectDB();
                 } catch(err) {
@@ -27,6 +28,7 @@ export const authOptions = {
             },
         }),
     ],
+    secret:process.env.NEXTAUTH_SECRET,
 };
 
 const handler = NextAuth(authOptions);
