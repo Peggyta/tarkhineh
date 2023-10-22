@@ -17,7 +17,6 @@ const profileSchema = new Schema ({
     },
     userName: {
         type: String,
-        immutable: true,
     }, 
     userId: {
         type: Schema.Types.ObjectId,
