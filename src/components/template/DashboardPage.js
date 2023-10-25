@@ -1,6 +1,5 @@
 import React from 'react';
 import DashboardGetInfo from './DashboardGetInfo';
-import DashboardEditPage from './DashboardEditPage';
 import ProfileCard from '../module/dashboardItems/ProfileCard';
 
 const DashboardPage = ({data, email, id}) => {

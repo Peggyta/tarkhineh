@@ -25,7 +25,7 @@ const product = {
         {
             slug: 'coffee',
             title: 'قهوه',
-            ingredient: '',
+            ingredient: 'دانه قهوه',
             rating: 4.7,
             price: 70000,
             discount: 0,
@@ -270,8 +270,7 @@ const product = {
             discount: 10,
             image: '/images/mirzaqasemi.jpg' ,
             category: 'غذای اصلی',
-            recipe: 'غذاهای ایرانی'
-            
+            recipe: 'غذاهای ایرانی'   
         },
         {
             slug: 'mochi',

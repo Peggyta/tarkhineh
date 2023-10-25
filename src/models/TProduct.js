@@ -1,6 +1,6 @@
 import { Schema, model, models } from "mongoose";
 
-const productSchema = new Schema({
+const tproductSchema = new Schema({
     slug: {
         type: String,
         required: true,
@@ -39,5 +39,5 @@ const productSchema = new Schema({
 {timestamps: true}
 );
 
-const Product = models.Product || model("Product", productSchema);
-export default Product;
+const TProduct = models.TProduct || model("TProduct", tproductSchema);
+export default TProduct;

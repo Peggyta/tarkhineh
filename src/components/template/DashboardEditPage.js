@@ -7,7 +7,7 @@ import CustomDatePicker from '../module/dashboardItems/CustomDatePicker';
 import Loader from '../module/Loader';
 
 
-const DashboardEditPage = ({data, email}) => {
+const DashboardEditPage = ({data}) => {
     const{userName, firstName, lastName, phone, birthday} = data;
     const router = useRouter();
     const[loading, setLoading] = useState(false);

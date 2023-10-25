@@ -1,10 +1,14 @@
 import React from 'react';
+import SliderPage from '../module/homepage/SliderPage';
 
 const MainMenu = () => {
     return (
-        <div className='text-center pt-16 font-bold text-4xl'>
-            <p>در حال ساخت...</p>
-            <p>!Under Construction</p>
+        <div>
+            <SliderPage />
+            <div className='text-center font-bold text-4xl pt-6'>
+                <p>در حال ساخت...</p>
+                <p>!Under Construction</p>
+            </div>
         </div>
     );
 };
