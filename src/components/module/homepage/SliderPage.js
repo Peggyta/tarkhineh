@@ -25,7 +25,7 @@ const SliderPage = () => {
                     backgroundRepeat: "no-repeat",
                     margin:"auto",
                     }}>
-                    <ul style={{ margin: "0px",}}> {dots} </ul>
+                    <ul style={{ margin: "4px",}}> {dots} </ul>
                 </div>    
             </div>
           ),
