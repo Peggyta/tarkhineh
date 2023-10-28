@@ -1,14 +1,14 @@
 'use client';
 import Rating from "react-rating";
-import HeartIcon from "@/components/icons/HeartIcon";
-
+import GoldStar from "@/components/icons/GoldStar";
+import EmptyStar from "@/components/icons/EmptyStar";
 
 export default function ProductRate({rating}) {
     return(
         <Rating 
-        value={rating}
-        emptySymbol={<HeartIcon />}
-        fullSymbol={<HeartIcon />} 
+        emptySymbol={<EmptyStar />}
+        fullSymbol={<GoldStar />}
+        initialRating={rating} 
         readonly />
     )
-}
+};
