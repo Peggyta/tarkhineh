@@ -26,7 +26,6 @@ const tproductSchema = new Schema({
     }, 
     image: {
         type: String,
-        required: true,
     },
     category: {
         type: String,
