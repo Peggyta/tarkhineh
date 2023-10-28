@@ -18,7 +18,7 @@ const FoodCard = ({data}) => {
                 <div className='flex items-center justify-between'>
                     <p className='text-sm text-neutral inline-block w-80'>{ingredient}</p>
                     <span>
-                        <p className='text-sm text-tomato font-medium'>%{e2p(discount)}</p>
+                        <p className={discount === 0 ? 'hidden': 'text-sm text-tomato font-medium'}>%{e2p(discount)}</p>
                     </span>
                 </div>
                 <div className='flex justify-end'>
