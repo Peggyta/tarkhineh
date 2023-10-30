@@ -18,14 +18,16 @@ const FoodCard = ({data}) => {
                 <p className='text-raven sm:text-xl text-sm font-semibold'>{title}</p>
                 <div className='flex items-center justify-between'>
                     <p className='sm:text-sm text-xs text-neutral inline-block w-full '>{ingredient}</p>
-                    <span>
-                        <p className={discount === 0 ? 'hidden': 'text-sm text-tomato font-medium'}>%{e2p(discount)}</p>
+                    <span className='flex flex-row gap-2'>
+                        <p className={discount === 0 ? 'hidden': 'text-sm text-neutral font-medium line-through hidden sm:block'}>{sp(price)}</p>
+                        <p className={discount === 0 ? 'hidden': 'text-sm text-tomato font-medium bg-red-100 px-1 rounded-sm'}>%{e2p(discount)}</p>
                     </span>
                 </div>
                 <div className='flex justify-end'>
-                    <p className='text-neutral sm:text-lg font-semibold text-xs'>{sp(price)} تومان</p>
+                    {discount ? (<p className='text-neutral sm:text-lg font-semibold text-xs'>{sp((price*(100-discount))/100)} تومان</p>):
+                    (<p className='text-neutral sm:text-lg font-semibold text-xs'>{sp(price)} تومان</p>)}
                 </div> 
-                <div className='flex sm:items-center items-end justify-between gap-2 sm:flex-row flex-col'>
+                <div className='flex sm:items-center items-end justify-between sm:gap-2 sm:flex-row flex-col'>
                     <div className='hidden sm:block'><ProductRate rating={rating} /></div>
                     <div className='sm:hidden block'><RateMobileVersion rating={rating} /></div>
                     <button className='bg-primary rounded-md text-white sm:w-56 w-full pt-3 py-4 sm:pt-1 sm:pb-2 sm:text-base text-xs 
