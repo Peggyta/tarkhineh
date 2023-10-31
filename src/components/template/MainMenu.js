@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import SliderPage from '../module/homepage/SliderPage';
 import FoodCard from '../module/menu/FoodCard';
+import SearchFilter from '../module/menu/SearchFilter';
 
 const MainMenu = ({foodData}) => {
         return (
@@ -15,6 +16,7 @@ const MainMenu = ({foodData}) => {
                     <Link href={`/menu?category=نوشیدنی`}>نوشیدنی</Link>
                 </div>
             </div>
+            <SearchFilter />
             <div className='grid lg:grid-cols-2 grid-cols-1 place-items-center gap-6 py-8 xl:px-0 lg:px-10 px-4'>
                 {foodData.length ? (
                     foodData.map((food)=> {

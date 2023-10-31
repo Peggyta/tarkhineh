@@ -4,12 +4,15 @@ import RateMobileVersion from './RateMobileVersion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { sp, e2p } from '@/utils/modifyNumber';
+import { shortenIngredient } from '@/helper/functions';
 
 const FoodCard = ({data}) => {
-    const{slug, title, ingredient, rating, price, discount}= data;
+    const{slug, title, ingredient, rating, price, discount, category}= data;
     
     return (
-        <div className='flex border border-bordercolor rounded-md xl:w-600  w-full'>
+        <>
+        <Link href={`/menu/?category=${category}/${slug}`}>
+        <div className='flex border border-bordercolor rounded-md xl:w-600 hover:shadow-md hover:transition sm:w-full xs:w-96 w-80'>
             <div>
                 <Image src={`/images/${slug}.jpg`}  width={0} height={0} sizes="100vw"
                 style={{ width: '169px', height: '158px', objectFit:'cover', borderBottomRightRadius:'5px', borderTopRightRadius:'5px' }} alt='food-pic' />
@@ -17,7 +20,7 @@ const FoodCard = ({data}) => {
             <div className='pt-1 lg:pb-2 pb-4 flex flex-col justify-between w-3/4 px-4'>
                 <p className='text-raven sm:text-xl text-sm font-semibold'>{title}</p>
                 <div className='flex items-center justify-between'>
-                    <p className='sm:text-sm text-xs text-neutral inline-block w-full '>{ingredient}</p>
+                    <p className='sm:text-sm text-xs text-neutral inline-block w-full '>{shortenIngredient(ingredient)}</p>
                     <span className='flex flex-row gap-2'>
                         <p className={discount === 0 ? 'hidden': 'text-sm text-neutral font-medium line-through hidden sm:block'}>{sp(price)}</p>
                         <p className={discount === 0 ? 'hidden': 'text-sm text-tomato font-medium bg-red-100 px-1 rounded-sm'}>%{e2p(discount)}</p>
@@ -34,8 +37,9 @@ const FoodCard = ({data}) => {
                     hover:bg-emerald-600 transition'>افزودن به سبد خرید</button>
                 </div> 
             </div>
-            
         </div>
+        </Link>
+        </>
     );
 };
 
