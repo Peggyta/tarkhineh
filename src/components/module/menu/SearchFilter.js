@@ -14,7 +14,7 @@ const SearchFilter = () => {
             </div>
         </div>
         <div className='px-4'>
-        <div className='flex items-center border border-bordercolor px-2 sm:w-500  w-full mt-4 mx-auto rounded-md justify-center  lg:hidden'>
+        <div className='flex items-center border border-bordercolor px-2 sm:w-500 w-full mt-4 mx-auto rounded-md justify-center  lg:hidden'>
                 <input className='w-full pb-2 pt-1 text-sm font-medium' placeholder='جستجو' />
                 <SearchIcon />
             </div>
