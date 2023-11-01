@@ -12,12 +12,12 @@ const FoodCard = ({data}) => {
     return (
         <>
         <Link href={`/menu/?category=${category}/${slug}`}>
-        <div className='flex border border-bordercolor rounded-md xl:w-600 hover:shadow-md hover:transition sm:w-full xs:w-96 w-80'>
+        <div className='flex border border-bordercolor rounded-md xl:w-600 hover:shadow-md hover:transition w-full '>
             <div>
                 <Image src={`/images/${slug}.jpg`}  width={0} height={0} sizes="100vw"
                 style={{ width: '169px', height: '158px', objectFit:'cover', borderBottomRightRadius:'5px', borderTopRightRadius:'5px' }} alt='food-pic' />
             </div>
-            <div className='pt-1 lg:pb-2 pb-4 flex flex-col justify-between w-3/4 px-4'>
+            <div className='pt-1 lg:pb-2 pb-4 flex flex-col justify-between sm:w-3/4 w-72 sm:px-4 px-2'>
                 <p className='text-raven sm:text-xl text-sm font-semibold'>{title}</p>
                 <div className='flex items-center justify-between'>
                     <p className='sm:text-sm text-xs text-neutral inline-block w-full '>{shortenIngredient(ingredient)}</p>
@@ -30,10 +30,10 @@ const FoodCard = ({data}) => {
                     {discount ? (<p className='text-neutral sm:text-lg font-semibold text-xs'>{sp((price*(100-discount))/100)} تومان</p>):
                     (<p className='text-neutral sm:text-lg font-semibold text-xs'>{sp(price)} تومان</p>)}
                 </div> 
-                <div className='flex sm:items-center items-end justify-between sm:gap-2 sm:flex-row flex-col'>
+                <div className='flex sm:items-center items-end sm:justify-between sm:gap-2 flex-row sm:flex-row flex-col items-end'>
                     <div className='hidden sm:block'><ProductRate rating={rating} /></div>
                     <div className='sm:hidden block'><RateMobileVersion rating={rating} /></div>
-                    <button className='bg-primary rounded-md text-white sm:w-56 w-full pt-3 py-4 sm:pt-1 sm:pb-2 sm:text-base text-xs 
+                    <button className='bg-primary rounded-md text-white sm:w-56 w-32 pt-3 py-4 sm:pt-1 sm:pb-2 sm:text-base text-xs 
                     hover:bg-emerald-600 transition'>افزودن به سبد خرید</button>
                 </div> 
             </div>
