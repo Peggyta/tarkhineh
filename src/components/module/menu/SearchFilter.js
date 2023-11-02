@@ -8,7 +8,7 @@ const SearchFilter = () => {
         <>
         <div className='flex lg:flex-row flex-col justify-between pt-4 md:pl-12 md:gap-6 w-full px-4' >
            <FilterSlider />
-            <div className='flex items-center border border-bordercolor px-2 lg:w-96 md:w-600 w-full rounded-md md:items-center hidden lg:flex'>
+            <div className='flex items-center border border-bordercolor px-2 md:w-3/4 w-full rounded-md md:items-center hidden lg:flex'>
                 <input className='w-full pb-2 pt-1 text-sm font-medium' placeholder='جستجو' />
                 <SearchIcon />
             </div>
