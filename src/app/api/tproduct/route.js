@@ -5,13 +5,15 @@ import TProduct from "@/models/TProduct";
 export async function GET() {
     try {
         await connectDB();
-        const newTproduct = await TProduct.create({
+      //   const newTproduct = await TProduct.create({
             
-      });
-      console.log(newTproduct);
+      // });
+      // console.log(newTproduct);
+      const getTproducts = await TProduct.find();
       return NextResponse.json(
         { message: 'محصول جدید اضافه شد' },
-        { status: 201 }
+        { status: 201 },
+        {data: getTproducts}
       );
     } catch (err) {
       console.log(err);

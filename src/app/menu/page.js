@@ -11,11 +11,9 @@ async function MenuPage({searchParams}) {
     if(searchParams.category) {
         products = products.filter((i)=> i.category === searchParams.category)
     };
-    const showModal = searchParams?.modal;
     return (
         <div>
             <MainMenu foodData={products} />
-            {showModal && <FoodDetail />}
         </div>
     );
 };
