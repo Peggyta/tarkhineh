@@ -5,9 +5,8 @@ import FoodDetail from "@/components/template/FoodDetail";
 async function DetailsPage({params:{slug}}) {
     await connectDB();
     const foodDetails = await TProduct.findOne({slug: slug});
-    console.log(foodDetails)
     if(!foodDetails) return <h3>مشکلی پیش آمده است. لطفا دوباره امتحان کنید</h3>
-    return <FoodDetail details={JSON.parse(JSON.stringify(foodDetails))} />
-
+    
+    return  <FoodDetail details={JSON.parse(JSON.stringify(foodDetails))} />   
 }
 export default DetailsPage;
