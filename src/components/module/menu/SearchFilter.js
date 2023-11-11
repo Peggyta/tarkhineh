@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import SearchIcon from '@/components/icons/SearchIcon';
+import SearchList from './SearchList';
 
 const SearchFilter = () => {
     const[showSearch, setShowSearch] = useState(false);
@@ -26,7 +27,14 @@ const SearchFilter = () => {
         fetchData();
     },[]);
     const searchProduct = searchTerm.filter((i)=> i.title.includes(search));
-
+    function searchList() {
+        if(isLoading) return <h3>در حال جستجو</h3>
+            if(showSearch && searchTerm.length) {
+                return( 
+                    <SearchList searchProduct={searchProduct} />
+            )
+        }; 
+    }
     return (
         <>
         <div className='flex lg:flex-row flex-col justify-between pt-4 md:pl-12 md:gap-6 w-full px-4' >
@@ -49,7 +57,8 @@ const SearchFilter = () => {
                     className='w-full pb-2 pt-1 text-sm font-medium outline-none' placeholder='جستجو' />
                 <SearchIcon />
             </div>
-        </div> 
+        </div>
+        <div>{searchList()}</div> 
     </>
     );
 };
