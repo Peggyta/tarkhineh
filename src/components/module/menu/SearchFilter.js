@@ -8,6 +8,14 @@ const SearchFilter = () => {
     const[searchTerm, setSearchTerm] = useState([]);
     const[isLoading, setIsLoading] = useState(false);
        
+    const searchHandler = e => {
+        setSearch(e.target.value);
+        if(e.target.value === '') {
+            setShowSearch(false)
+        } else if (e.target.value.lenght >=3) {
+            setShowSearch(true)
+        }
+    }
     useEffect(()=> {
         const fetchData = async () => {
             const response = await fetch('/api/tproduct')
