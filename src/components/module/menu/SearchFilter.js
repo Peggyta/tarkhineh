@@ -17,6 +17,7 @@ const SearchFilter = () => {
         };
         fetchData();
     },[]);
+    const searchProduct = searchTerm.filter((i)=> i.title.includes(search));
 
     return (
         <>
