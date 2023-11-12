@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchCard from './SearchCard';
 
 const SearchList = ({searchProduct}) => {
     return (
