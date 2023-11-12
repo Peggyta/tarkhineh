@@ -65,5 +65,8 @@ textarea {
     @apply border border-primary rounded-md px-8 hover:text-hovercolor hover:border-hovercolor transition
     pt-1 pb-2 flex items-center gap-1 w-32 justify-center
   }
+  .show-search {
+    @apply flex absolute z-10 left-0 top-[45px] w-full bg-white justify-center overflow-y-auto h-56 pt-4 border-2 border-bordercolor
+  }
 }
 

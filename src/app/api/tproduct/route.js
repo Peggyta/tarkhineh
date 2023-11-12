@@ -11,9 +11,8 @@ export async function GET() {
       // console.log(newTproduct);
       const getTproducts = await TProduct.find();
       return NextResponse.json(
-        { message: 'محصول جدید اضافه شد' },
+        {data: getTproducts},
         { status: 201 },
-        {data: getTproducts}
       );
     } catch (err) {
       console.log(err);

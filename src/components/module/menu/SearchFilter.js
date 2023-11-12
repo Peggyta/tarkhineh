@@ -14,9 +14,9 @@ const SearchFilter = () => {
         setSearch(e.target.value);
         if(e.target.value === '') {
             setShowSearch(false)
-        }else if (e.target.value.length >= 3) {
+        }else if (e.target.value.length >= 2) {
             setShowSearch(true)
-        }
+        } 
     }
     useEffect(()=> {
         const fetchData = async () => {

@@ -16,7 +16,7 @@ const MainMenu = ({foodData}) => {
                     <Link href={`/menu?category=نوشیدنی`}>نوشیدنی</Link>
                 </div>
             </div>
-            <SearchFilter />
+            <SearchFilter foodData={JSON.parse(JSON.stringify(foodData))} />
             <div className='grid lg:grid-cols-2 grid-cols-1 place-items-center gap-6 py-8 xl:px-0 lg:px-10 px-4'>
                 {foodData.length ? (
                     foodData.map((food)=> {
