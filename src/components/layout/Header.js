@@ -8,7 +8,6 @@ import HamburgerMenu from './HamburgerMenu';
 //logo
 import logo from '../../../public/images/logo.png';
 //icons
-import HamburgerIcon from '../icons/HamburgerIcon';
 import SearchIcon from '../icons/SearchIcon';
 import ProfileIcon from '../icons/ProfileIcon';
 import CartIcon from '../icons/CartIcon';
@@ -27,7 +26,6 @@ const Header = () => {
     return (
        <header className='flex items-center text-base lg:text-xl justify-between sm:px-10 px-4 h-28'>
             <div className='block md:hidden'>
-                {/* <HamburgerIcon /> */}
                 <HamburgerMenu />
             </div>
             <div className=' sm:w-max w-28'>
