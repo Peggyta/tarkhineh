@@ -3,6 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useSession } from 'next-auth/react';
+import HamburgerMenu from './HamburgerMenu';
 
 //logo
 import logo from '../../../public/images/logo.png';
@@ -26,7 +27,8 @@ const Header = () => {
     return (
        <header className='flex items-center text-base lg:text-xl justify-between sm:px-10 px-4 h-28'>
             <div className='block md:hidden'>
-                <HamburgerIcon />
+                {/* <HamburgerIcon /> */}
+                <HamburgerMenu />
             </div>
             <div className=' sm:w-max w-28'>
                 <Link href='/'>
