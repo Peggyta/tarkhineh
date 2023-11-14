@@ -7,6 +7,11 @@ import Image from 'next/image';
 import HamburgerIcon from '../icons/HamburgerIcon';
 import Cancel from '../icons/Cancel';
 import ArrowDownMenu from '../icons/ArrowDownMenu';
+import Thome from '../icons/Thome';
+import Tmenu from '../icons/Tmenu';
+import Tcall from '../icons/Tcall';
+import Tbranch from '../icons/Tbranch';
+import Tabout from '../icons/Tabout';
 import hamburPic from '../../../public/images/hamburger.jpg';
 import vectorLogo from '../../../public/images/Vector.png';
 
@@ -69,12 +74,18 @@ export default function HamburgerMenu() {
                     </div>
                   </div>
                 </Dialog.Title>
-                <div className='flex flex-col items-center gap-3 text-raven px-4'>
-                    <Link className='w-full border-b border-bordercolor pt-3 pb-4' href='/'>صفحه اصلی</Link>
-                    <button className='flex items-center justify-between w-full border-b border-bordercolor pb-4'>منو<ArrowDownMenu /></button>
-                    <button className='flex items-center justify-between w-full border-b border-bordercolor pb-4'>شعبه<ArrowDownMenu /></button>
-                    <Link className='w-full border-b border-bordercolor pb-4' href='/about-us'>درباره ما</Link>
-                    <Link className='w-full' href='/contact-us'>تماس با ما</Link> 
+                <div className='flex flex-col items-center gap-3 text-raven text-sm px-4'>
+                    <Link className='w-full flex items-center gap-2 border-b border-bordercolor pt-3 pb-4' href='/'><Thome />صفحه اصلی</Link>
+                    <div className='flex items-center justify-between w-full border-b border-bordercolor pb-4'>
+                      <button className='flex items-center gap-2'><Tmenu />منو</button>
+                      <ArrowDownMenu />
+                    </div>
+                    <div className='flex items-center justify-between w-full border-b border-bordercolor pb-4'>
+                      <button className='flex items-center gap-2'><Tbranch />شعبه</button>
+                      <ArrowDownMenu />
+                    </div>
+                    <Link className='w-full flex items-center gap-2 border-b border-bordercolor pb-4' href='/about-us'><Tabout />درباره ما</Link>
+                    <Link className='flex items-center gap-2 w-full' href='/contact-us'><Tcall />تماس با ما</Link> 
                 </div>
                 </Dialog.Panel>
               </Transition.Child>
