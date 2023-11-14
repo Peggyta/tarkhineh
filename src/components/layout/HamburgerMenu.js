@@ -6,7 +6,10 @@ import Image from 'next/image';
 //icons
 import HamburgerIcon from '../icons/HamburgerIcon';
 import Cancel from '../icons/Cancel';
+import ArrowDownMenu from '../icons/ArrowDownMenu';
 import hamburPic from '../../../public/images/hamburger.jpg';
+import vectorLogo from '../../../public/images/Vector.png';
+
 
 export default function HamburgerMenu() {
   let [isOpen, setIsOpen] = useState(true)
@@ -20,7 +23,7 @@ export default function HamburgerMenu() {
   }
 
   return (
-    <>
+    <div className='md:hidden block'>
       <div>
         <button
           type="button"
@@ -54,24 +57,24 @@ export default function HamburgerMenu() {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-[256px] h-full absolute top-0 -right-0 transform overflow-hidden bg-white p-6 text-left align-middle shadow-xl transition-all">
-                  <Dialog.Title
-                    as="h3"
-                    className="text-lg font-medium leading-6 text-gray-900"
-                  >
-                <div className="mt-4">
-                <Image src={hamburPic} alt='banner' width={256} height={94} />
-                    <button type="button" onClick={closeModal}>
+                <Dialog.Panel className="w-[256px] h-full absolute top-0 -right-0 transform overflow-hidden bg-white text-right align-middle shadow-xl transition-all">
+                  <Dialog.Title as="h3">
+                  <div className='w-full relative'>
+                    <Image src={hamburPic} alt='banner' width={256} height={94} />
+                    <button className='absolute z-10 top-2 left-3' type="button" onClick={closeModal}>
                         <Cancel />
                     </button>
-                </div>
+                    <div className='absolute top-8 right-4'>
+                      <Image src={vectorLogo} alt='logo' width={63} height={30} />
+                    </div>
+                  </div>
                 </Dialog.Title>
-                <div className='flex flex-col items-center gap-3 mt-6 text-raven'>
-                    <Link href='/'>صفحه اصلی</Link>
-                    <Link href='/menu'>منو</Link>
-                    <Link href='/branches'>شعبه</Link>
-                    <Link href='/about-us'>درباره ما</Link>
-                    <Link href='/contact-us'>تماس با ما</Link> 
+                <div className='flex flex-col items-center gap-3 text-raven px-4'>
+                    <Link className='w-full border-b border-bordercolor pt-3 pb-4' href='/'>صفحه اصلی</Link>
+                    <button className='flex items-center justify-between w-full border-b border-bordercolor pb-4'>منو<ArrowDownMenu /></button>
+                    <button className='flex items-center justify-between w-full border-b border-bordercolor pb-4'>شعبه<ArrowDownMenu /></button>
+                    <Link className='w-full border-b border-bordercolor pb-4' href='/about-us'>درباره ما</Link>
+                    <Link className='w-full' href='/contact-us'>تماس با ما</Link> 
                 </div>
                 </Dialog.Panel>
               </Transition.Child>
@@ -79,6 +82,6 @@ export default function HamburgerMenu() {
           </div>
         </Dialog>
       </Transition>
-    </>
+    </div>
   )
 }
