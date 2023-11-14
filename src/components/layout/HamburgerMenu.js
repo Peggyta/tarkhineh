@@ -17,7 +17,7 @@ import vectorLogo from '../../../public/images/Vector.png';
 
 
 export default function HamburgerMenu() {
-  let [isOpen, setIsOpen] = useState(true)
+  let [isOpen, setIsOpen] = useState(false)
 
   function closeModal() {
     setIsOpen(false)
@@ -75,17 +75,17 @@ export default function HamburgerMenu() {
                   </div>
                 </Dialog.Title>
                 <div className='flex flex-col items-center gap-3 text-raven text-sm px-4'>
-                    <Link className='w-full flex items-center gap-2 border-b border-bordercolor pt-3 pb-4' href='/'><Thome />صفحه اصلی</Link>
-                    <div className='flex items-center justify-between w-full border-b border-bordercolor pb-4'>
-                      <button className='flex items-center gap-2'><Tmenu />منو</button>
+                    <Link className='hambur-links w-full border-b border-bordercolor pt-3 pb-4' href='/'><Thome />صفحه اصلی</Link>
+                    <div className='hambur-buttons'>
+                      <button className='hambur-links'><Tmenu />منو</button>
                       <ArrowDownMenu />
                     </div>
-                    <div className='flex items-center justify-between w-full border-b border-bordercolor pb-4'>
-                      <button className='flex items-center gap-2'><Tbranch />شعبه</button>
+                    <div className='hambur-buttons'>
+                      <button className='hambur-links'><Tbranch />شعبه</button>
                       <ArrowDownMenu />
                     </div>
-                    <Link className='w-full flex items-center gap-2 border-b border-bordercolor pb-4' href='/about-us'><Tabout />درباره ما</Link>
-                    <Link className='flex items-center gap-2 w-full' href='/contact-us'><Tcall />تماس با ما</Link> 
+                    <Link className='hambur-links w-full border-b border-bordercolor pb-4' href='/about-us'><Tabout />درباره ما</Link>
+                    <Link className='hambur-links w-full' href='/contact-us'><Tcall />تماس با ما</Link> 
                 </div>
                 </Dialog.Panel>
               </Transition.Child>
