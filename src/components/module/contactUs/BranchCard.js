@@ -11,7 +11,7 @@ const BranchCard = (props) => {
         <Link href={`/contact-us/${slug}`}>
                 <div className='flex md:flex-row flex-col items-center justify-start lg:gap-20 gap-6 border border-gray-300 
                 cursor-pointer hover:scale-105 hover:shadow-lg hover:transition sm:w-600 h-full w-full mx-auto md:w-full rounded-md'>
-                    <div className='h-full overflow-hidden rounded-r-md md:w-1/2 w-full'>
+                    <div className='h-full overflow-hidden md:rounded-r-md rounded-tr-md rounded-tl-md md:w-1/2 w-full'>
                         <Image src={`/images/${slug}.jpg`} alt='branches' width={600} height={280} />
                     </div>
                     <div className='text-neutral flex flex-col xl:gap-2 xl:text-lg sm:text-sm text-xs px-4 md:px-0 md:pl-2 pb-10 md:pb-0'>
