@@ -82,7 +82,7 @@ export default function HamburgerMenu() {
                     <div className=' border-b border-bordercolor pb-4 w-full' onClick={()=> setOpenMenu(!openMenu)}>
                       <div className='hambur-buttons' >
                         <button className='hambur-links'  ><Tmenu />منو</button>
-                        <ArrowDownMenu />
+                        {openMenu ? <div className='rotate-180 transition duration-100'><ArrowDownMenu /></div> : <ArrowDownMenu /> }
                       </div>
                       {openMenu ? 
                         <div className='text-xs text-raven flex flex-col gap-3 pt-3 pb-1'>
@@ -95,7 +95,7 @@ export default function HamburgerMenu() {
                     <div className=' border-b border-bordercolor pb-4 w-full' onClick={()=> setOpenBranch(!openBranch)}>
                       <div className='hambur-buttons'>
                         <button className='hambur-links'><Tbranch />شعبه</button>
-                        <ArrowDownMenu />
+                        {openMenu ? <div className='rotate-180 transition duration-100'><ArrowDownMenu /></div> : <ArrowDownMenu /> }
                       </div>
                       {openBranch ? 
                         <div className='text-xs text-raven flex flex-col gap-3 pt-3 pb-1'>
