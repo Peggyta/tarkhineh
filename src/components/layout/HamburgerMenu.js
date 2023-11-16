@@ -15,8 +15,6 @@ import Tbranch from '../icons/Tbranch';
 import Tabout from '../icons/Tabout';
 import VectorIcon from '../icons/VectorIcon';
 import hamburPic from '../../../public/images/hamburger.jpg';
-import vectorLogo from '../../../public/images/Vector.png';
-
 
 export default function HamburgerMenu() {
   let [isOpen, setIsOpen] = useState(false);
@@ -74,7 +72,6 @@ export default function HamburgerMenu() {
                         <Cancel />
                     </button>
                     <div className='absolute top-8 right-4'>
-                      {/* <Image src={vectorLogo} alt='logo' width={63} height={30} /> */}
                       <VectorIcon />
                     </div>
                   </div>

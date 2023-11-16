@@ -1,9 +1,10 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useSession } from 'next-auth/react';
 import HamburgerMenu from './HamburgerMenu';
+import SearchModal from '../module/homepage/SearchModal';
 
 //logo
 import logo from '../../../public/images/logo.png';
@@ -22,7 +23,8 @@ const Header = () => {
         {text:'درباره ما', href:'/about-us'},
         {text:'تماس با ما', href:'/contact-us'},
     ];
-    
+    const[isShow, setIsShow]= useState(false);
+
     return (
        <header className='flex items-center text-base lg:text-xl justify-between sm:px-10 px-4 h-28'>
             <div className='block md:hidden'>
@@ -44,10 +46,13 @@ const Header = () => {
                 })}
             </div>
             <div className='flex gap-3'>
-                <span className='bg-secondary lg:p-2 p-1 hidden md:block'>
+                <span 
+                    className='bg-secondary lg:p-2 p-1 hidden md:block cursor-pointer rounded-md hover:bg-emerald-200 transition' 
+                    onClick={() => setIsShow(!isShow)}>
                     <SearchIcon />
+                    {isShow && <SearchModal />}
                 </span>
-                <span className='bg-secondary lg:p-2 p-1'>
+                <span className='bg-secondary rounded-md lg:p-2 p-1'>
                     <CartIcon />
                 </span>
                 {data ? (
@@ -56,7 +61,7 @@ const Header = () => {
                             <ProfileIcon />
                         </Link>
                     </div>): (
-                    <div className='bg-secondary lg:p-2  p-1'>
+                    <div className='bg-secondary rounded-md lg:p-2  p-1'>
                         <Link href='/signin'>
                             <LoginIcon />
                         </Link>
