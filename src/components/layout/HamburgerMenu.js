@@ -13,6 +13,7 @@ import Tmenu from '../icons/Tmenu';
 import Tcall from '../icons/Tcall';
 import Tbranch from '../icons/Tbranch';
 import Tabout from '../icons/Tabout';
+import VectorIcon from '../icons/VectorIcon';
 import hamburPic from '../../../public/images/hamburger.jpg';
 import vectorLogo from '../../../public/images/Vector.png';
 
@@ -73,19 +74,22 @@ export default function HamburgerMenu() {
                         <Cancel />
                     </button>
                     <div className='absolute top-8 right-4'>
-                      <Image src={vectorLogo} alt='logo' width={63} height={30} />
+                      {/* <Image src={vectorLogo} alt='logo' width={63} height={30} /> */}
+                      <VectorIcon />
                     </div>
                   </div>
                 </Dialog.Title>
                 <div className='flex flex-col items-center gap-3 text-raven text-sm px-4'>
                     <Link className='hambur-links w-full border-b border-bordercolor pt-3 pb-4' href='/'><Thome />صفحه اصلی</Link>
                     <div className=' border-b border-bordercolor pb-4 w-full' onClick={()=> setOpenMenu(!openMenu)}>
-                      <div className='hambur-buttons' >
+                      <div className='hambur-buttons cursor-pointer' >
                         <button className='hambur-links'  ><Tmenu />منو</button>
                         {openMenu ? <div className='rotate-180 transition duration-100'><ArrowDownMenu /></div> : <ArrowDownMenu /> }
                       </div>
                       {openMenu ? 
-                        <div className='text-xs text-raven flex flex-col gap-3 pt-3 pb-1'>
+                        <div 
+                          onClick={()=> setIsOpen(!isOpen)}
+                          className='text-xs text-raven flex flex-col gap-3 pt-3 pb-1'>
                             <Link href={`/menu/?category=غذای-اصلی`}>غذای اصلی</Link>
                             <Link href={`/menu/?category=پیش-غذا`}>پیش‌غذا</Link>
                             <Link href={`/menu/?category=دسر`}>دسر</Link>
@@ -93,16 +97,18 @@ export default function HamburgerMenu() {
                         </div>: null}
                     </div>
                     <div className=' border-b border-bordercolor pb-4 w-full' onClick={()=> setOpenBranch(!openBranch)}>
-                      <div className='hambur-buttons'>
+                      <div className='hambur-buttons cursor-pointer'>
                         <button className='hambur-links'><Tbranch />شعبه</button>
                         {openMenu ? <div className='rotate-180 transition duration-100'><ArrowDownMenu /></div> : <ArrowDownMenu /> }
                       </div>
                       {openBranch ? 
-                        <div className='text-xs text-raven flex flex-col gap-3 pt-3 pb-1'>
-                            <Link href='/branches'>شعبه اکباتان</Link>
-                            <Link href='/branches'>شعبه اقدسیه</Link>
-                            <Link href='/branches'>شعبه چالوس</Link>
-                            <Link href='/branches'>شعبه ونک</Link>
+                        <div 
+                          onClick={()=> setIsOpen(!isOpen)}
+                          className='text-xs text-raven flex flex-col gap-3 pt-3 pb-1'>
+                            <Link href='/contact-us'>شعبه اکباتان</Link>
+                            <Link href='/contact-us'>شعبه اقدسیه</Link>
+                            <Link href='/contact-us'>شعبه چالوس</Link>
+                            <Link href='/contact-us'>شعبه ونک</Link>
                         </div>: null}
                     </div>
                     <Link className='hambur-links w-full border-b border-bordercolor pb-4' href='/about-us'><Tabout />درباره ما</Link>
