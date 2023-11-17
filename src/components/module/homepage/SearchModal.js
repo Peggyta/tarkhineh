@@ -4,14 +4,24 @@ import CancelDark from '@/components/icons/CancelDark';
 import SearchIcon from '@/components/icons/SearchIcon';
 
 export default function SearchModal() {
-  let [isOpen, setIsOpen] = useState(true)
+  let [isOpen, setIsOpen] = useState(false)
 
   function closeModal() {
     setIsOpen(false)
   }
+  function openModal() {
+    setIsOpen(true)
+  }
 
   return (
     <>
+      <div>
+          <span 
+              className='bg-secondary lg:p-2 p-1 hidden md:block cursor-pointer rounded-md hover:bg-emerald-200 transition' 
+              onClick={openModal}>
+              <SearchIcon /> 
+            </span>
+      </div>
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={closeModal}>
           <Transition.Child
