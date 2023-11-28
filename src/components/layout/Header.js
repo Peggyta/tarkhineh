@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useSession } from 'next-auth/react';
@@ -9,7 +9,6 @@ import SearchModal from '../module/homepage/SearchModal';
 //logo
 import logo from '../../../public/images/logo.png';
 //icons
-import SearchIcon from '../icons/SearchIcon';
 import ProfileIcon from '../icons/ProfileIcon';
 import CartIcon from '../icons/CartIcon';
 import LoginIcon from '../icons/LoginIcon';
@@ -23,7 +22,6 @@ const Header = () => {
         {text:'درباره ما', href:'/about-us'},
         {text:'تماس با ما', href:'/contact-us'},
     ];
-    const[isShow, setIsShow]= useState(false);
 
     return (
        <header className='flex items-center text-base lg:text-xl justify-between sm:px-10 px-4 h-28'>
@@ -46,11 +44,8 @@ const Header = () => {
                 })}
             </div>
             <div className='flex gap-3'>
-                <span 
-                    className='bg-secondary lg:p-2 p-1 hidden md:block cursor-pointer rounded-md hover:bg-emerald-200 transition' 
-                    onClick={() => setIsShow(!isShow)}>
-                    <SearchIcon />
-                    {isShow && <SearchModal />}
+                <span >
+                    <SearchModal />
                 </span>
                 <span className='bg-secondary rounded-md lg:p-2 p-1'>
                     <CartIcon />
