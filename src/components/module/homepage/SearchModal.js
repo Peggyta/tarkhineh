@@ -1,10 +1,15 @@
+'use client';
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react';
+import SearchResult from '../search/SearchResult';
 import CancelDark from '@/components/icons/CancelDark';
 import SearchIcon from '@/components/icons/SearchIcon';
 
 export default function SearchModal() {
-  let [isOpen, setIsOpen] = useState(false)
+  let [isOpen, setIsOpen] = useState(false);
+  let [isOpenResult, setIsOpenResult] = useState(false);
+  const [title, setTitle] = useState(''); 
+  const [results, setResults] = useState([]);
 
   function closeModal() {
     setIsOpen(false)
@@ -12,7 +17,25 @@ export default function SearchModal() {
   function openModal() {
     setIsOpen(true)
   }
+  function closeResult() {
+    setIsOpenResult(false)
+  }
+  function openResult() {
+    setIsOpenResult(true)
+  }
 
+  const keyHandler = async(e) => {
+    if(e.key === 'Enter') {
+      const response = await fetch (`/api/search?title=${title}`)
+      const food = await response.json();
+      if(food) {
+        setResults(food)
+        closeModal(true)
+        openResult(true)
+      }
+    }
+  };
+  
   return (
     <>
       <div>
@@ -65,11 +88,14 @@ export default function SearchModal() {
                     </p>
                     <div className='flex items-center relative w-full justify-center'>
                         <input
+                            value={title}
+                            onChange={(e)=> setTitle(e.target.value)}
+                            onKeyUp={keyHandler}
                             placeholder='جستجو'
                             type='text'
                             className='w-11/12 outline-none pt-1 pb-2 px-2 mt-3 border border-bordercolor rounded-md' />
-                        <span className='absolute left-7 top-[19px]'><SearchIcon /></span>  
-                    </div>    
+                        <span className='absolute left-7 top-[19px]'><SearchIcon /></span> 
+                    </div>
                   </div>
                 </Dialog.Panel>
               </Transition.Child>
