@@ -32,7 +32,7 @@ export default function SearchModal() {
         setResults(food)
         closeModal(true)
         openResult(true)
-      }
+      } 
     }
   };
   
@@ -100,29 +100,28 @@ export default function SearchModal() {
                 </Dialog.Panel>
               </Transition.Child>
             </div>
-          </div>
-        </Dialog>
-      </Transition>
-      <Transition appear show={isOpenResult} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={closeResult}>
-          <Transition.Child
-            as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
+            </div>
+          </Dialog>
+        </Transition>
+        <Transition appear show={isOpenResult} as={Fragment}>
+          <Dialog as="div" className="relative z-10" onClose={closeResult}>
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0"
+              enterTo="opacity-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100"
+              leaveTo="opacity-0"
+            >
             <div className="fixed inset-0 bg-black/25" />
-          </Transition.Child>
-
-          <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center">
-              <Transition.Child
-                as={Fragment}
-              >
-                <Dialog.Panel className="w-3/4 h-[600px] transform max-w-6xl overflow-y-auto rounded-xl bg-white text-left align-middle shadow-xl transition-all">
+            </Transition.Child>
+              <div className="fixed inset-0 overflow-y-auto">
+                <div className="flex min-h-full items-center justify-center p-4 text-center">
+                  <Transition.Child
+                  as={Fragment}
+                  >
+                  <Dialog.Panel className="w-3/4 h-[600px] transform max-w-6xl overflow-y-auto rounded-xl bg-white text-left align-middle shadow-xl transition-all">
                   <div className='flex justify-between w-full bg-ash px-4 py-4'>
                     <p className='invisible'>.....</p>
                     <p className='text-raven text-xl font-semibold'> نتایج جستجو برای: 
@@ -141,7 +140,8 @@ export default function SearchModal() {
                         return(
                             <SearchResult key={i._id} data={i} />
                           )})}  
-                    </div>    
+                    </div>
+                    {!results.length && <h3 className='font-bold trxt-xl text-raven'>نتیجه ای یافت نشد</h3>}    
                   </div>
                 </Dialog.Panel>
               </Transition.Child>
